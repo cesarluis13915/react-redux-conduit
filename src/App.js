@@ -9,6 +9,7 @@ class App extends Component {
   }
   
   componentWillMount() {
+    console.log('Props:', this.props);
     this.store = this.props.store;
     this.store.subscribe(() => this.setState(this.store.getState()));
   }
