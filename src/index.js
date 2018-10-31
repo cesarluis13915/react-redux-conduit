@@ -1,34 +1,22 @@
 import React from 'react';
-import { createStore,applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+import { HashRouter } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { promiseMiddleware } from './middleware';
+
+import store from './store';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
 
-const defaultState = {
-  appName: 'conduit',
-  articles: null
-};
-
-const reducer = function(state = defaultState, action) {
-  switch(action.type) {
-    case 'HOME_PAGE_LOADED':
-      return { ...state, articles: action.payload.articles };
-    default:
-      return state;
-  }
-};
-
-const store = createStore(reducer, applyMiddleware(promiseMiddleware));
-
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <HashRouter>
+      <Route path="/" component={App}></Route>
+    </HashRouter>
   </Provider>,
   document.getElementById('root')
 );
