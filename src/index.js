@@ -1,7 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { Router, Route, IndexRoute, hashHistory } from 'react-router';
-import { HashRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
@@ -14,9 +13,9 @@ import 'font-awesome/css/font-awesome.min.css';
 
 ReactDOM.render(
   <Provider store={store}>
-    <HashRouter>
-      <Route path="/" component={App}></Route>
-    </HashRouter>
+    <Router>
+      <Route component={App} />
+    </Router>
   </Provider>,
   document.getElementById('root')
 );
