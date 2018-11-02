@@ -8,8 +8,8 @@ import * as serviceWorker from './serviceWorker';
 
 import store from './store';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'font-awesome/css/font-awesome.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'font-awesome/css/font-awesome.min.css';
 
 ReactDOM.render(
   <Provider store={store}>
